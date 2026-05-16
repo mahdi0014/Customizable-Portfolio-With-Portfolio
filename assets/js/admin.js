@@ -2756,15 +2756,37 @@ function buildAdminEmailReplyLink(email, name, subject) {
 }
 
 function buildAdminWhatsappLink(phone, name, subject) {
-    const cleanPhone = String(phone || '').replace(/[^\d]/g, '');
+    let rawPhone = String(phone || '').trim();
 
-    const text = encodeURIComponent(
-        'Hello ' + (name || '') + ', I received your message about: ' + (subject || '')
-    );
+    if (!rawPhone) return '#';
 
-    if (!cleanPhone) return '#';
+    // Remove spaces, dash, brackets, etc. but keep digits only
+    let cleanPhone = rawPhone.replace(/[^\d]/g, '');
 
-    return 'https://wa.me/' + cleanPhone + '?text=' + text;
+    // Convert international format starting with 00
+    // Example: 0088017XXXXXXXX -> 88017XXXXXXXX
+    if (cleanPhone.startsWith('00')) {
+        cleanPhone = cleanPhone.slice(2);
+    }
+
+    // Bangladesh local number fix
+    // Example: 017XXXXXXXX -> 88017XXXXXXXX
+    if (cleanPhone.startsWith('01') && cleanPhone.length === 11) {
+        cleanPhone = '88' + cleanPhone;
+    }
+
+    // Bangladesh number without first 0
+    // Example: 17XXXXXXXX -> 88017XXXXXXXX
+    if (cleanPhone.startsWith('1') && cleanPhone.length === 10) {
+        cleanPhone = '880' + cleanPhone;
+    }
+
+    const message =
+        'Hello ' + (name || '') + ',\n\n' +
+        'I received your message about: ' + (subject || 'your project') + '.\n\n' +
+        'Thank you for contacting us.';
+
+    return 'https://wa.me/' + cleanPhone + '?text=' + encodeURIComponent(message);
 }
 
 
