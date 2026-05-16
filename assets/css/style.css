@@ -3576,7 +3576,7 @@ body.public-data-ready>[data-include] {
    Logo left, menu + button right, smaller gap
 ===================================================== */
 
-@media (min-width: 901px) {
+@media (min-width: 1081px) {
 
     .site-header .container,
     .navbar .container,
@@ -3656,7 +3656,7 @@ body.public-data-ready>[data-include] {
 }
 
 /* Medium desktop/laptop adjustment */
-@media (min-width: 901px) and (max-width: 1200px) {
+@media (min-width: 1081px) and (max-width: 1200px) {
 
     .site-header .container,
     .navbar .container,
