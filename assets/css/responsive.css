@@ -1,0 +1,723 @@
+@media (max-width: 1080px) {
+    .nav-menu {
+        position: fixed;
+        top: 96px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        width: min(92%, 520px);
+        padding: 16px;
+        border-radius: 26px;
+        background: rgba(6, 8, 22, 0.95);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: 0.25s ease;
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .nav-link {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        margin: 0 auto;
+    }
+
+    .profile-card {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+
+    .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .container {
+        width: min(100% - 26px, 1180px);
+    }
+
+    .site-header {
+        top: 10px;
+    }
+
+    .nav-wrapper {
+        border-radius: 24px;
+    }
+
+    .brand-text strong {
+        font-size: 13px;
+    }
+
+    .brand-text small {
+        font-size: 11px;
+    }
+
+    .nav-actions .btn {
+        display: none;
+    }
+
+    .nav-menu {
+        top: 88px;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section {
+        padding: 145px 0 70px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image {
+        height: 360px;
+    }
+
+    .preview-section,
+    .content-section {
+        padding: 65px 0;
+    }
+
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inner-hero {
+        padding: 145px 0 60px;
+    }
+
+    .inner-hero h1 {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .cta-box {
+        padding: 34px 22px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   HOME PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+    .about-preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-preview-grid,
+    .review-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-one {
+        left: 12px;
+    }
+
+    .card-two {
+        right: 12px;
+    }
+}
+
+@media (max-width: 680px) {
+    .tools-strip {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tools-track {
+        gap: 24px;
+    }
+
+    .about-preview-content,
+    .about-preview-card {
+        padding: 24px;
+    }
+
+    .service-preview-grid,
+    .project-preview-grid,
+    .review-preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-result-card {
+        display: none;
+    }
+
+    .section-action .btn {
+        width: 100%;
+    }
+
+    .project-image {
+        height: 210px;
+    }
+}
+
+/* =====================================================
+   ABOUT PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+
+    .about-identity-grid,
+    .brand-statement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-profile-card {
+        position: static;
+    }
+
+    .about-profile-image {
+        height: 480px;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .about-identity-section,
+    .career-section,
+    .about-skills-section,
+    .brand-statement-section {
+        padding: 65px 0;
+    }
+
+    .about-main-content,
+    .career-card,
+    .brand-statement-card {
+        padding: 24px;
+    }
+
+    .about-profile-image {
+        height: 360px;
+    }
+
+    .about-socials {
+        grid-template-columns: 1fr;
+    }
+
+    .identity-item {
+        flex-direction: column;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .career-card p {
+        font-size: 16px;
+    }
+}
+
+/* =====================================================
+   SERVICES PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+
+    .services-page-grid,
+    .service-process-grid,
+    .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .marketing-tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .services-main-section,
+    .service-process-section,
+    .marketing-tools-section,
+    .why-choose-section {
+        padding: 65px 0;
+    }
+
+    .services-page-grid,
+    .service-process-grid,
+    .why-choose-grid,
+    .marketing-tools-list {
+        grid-template-columns: 1fr;
+    }
+
+    .marketing-tools-content {
+        padding: 24px;
+    }
+}
+
+/* =====================================================
+   EDUCATION PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+    .certification-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .training-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+
+    .education-main-section,
+    .certification-section,
+    .training-section,
+    .education-achievement-section {
+        padding: 65px 0;
+    }
+
+    .education-timeline::before {
+        display: none;
+    }
+
+    .education-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .education-year {
+        width: 82px;
+        height: 82px;
+        font-size: 18px;
+    }
+
+    .education-card,
+    .certification-card,
+    .training-content,
+    .training-item,
+    .achievement-card {
+        padding: 24px;
+    }
+
+    .certification-grid,
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .training-item {
+        flex-direction: column;
+    }
+}
+
+/* =====================================================
+   EXPERIENCE PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+
+    .experience-overview-grid,
+    .experience-type-grid,
+    .experience-achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .responsibilities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .experience-overview-section,
+    .work-experience-section,
+    .experience-type-section,
+    .responsibilities-section,
+    .experience-achievement-section {
+        padding: 65px 0;
+    }
+
+    .experience-timeline::before {
+        display: none;
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .experience-date {
+        width: 86px;
+        min-height: 86px;
+    }
+
+    .experience-date span {
+        font-size: 18px;
+    }
+
+    .experience-card,
+    .experience-type-card,
+    .responsibilities-content,
+    .responsibility-item,
+    .experience-achievement-card {
+        padding: 24px;
+    }
+
+    .experience-overview-grid,
+    .experience-type-grid,
+    .experience-achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .responsibility-item {
+        flex-direction: column;
+    }
+}
+
+/* =====================================================
+   EXPERIENCE PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+
+    .experience-overview-grid,
+    .experience-type-grid,
+    .experience-achievement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .responsibilities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .experience-overview-section,
+    .work-experience-section,
+    .experience-type-section,
+    .responsibilities-section,
+    .experience-achievement-section {
+        padding: 65px 0;
+    }
+
+    .experience-timeline::before {
+        display: none;
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .experience-date {
+        width: 86px;
+        min-height: 86px;
+    }
+
+    .experience-date span {
+        font-size: 18px;
+    }
+
+    .experience-card,
+    .experience-type-card,
+    .responsibilities-content,
+    .responsibility-item,
+    .experience-achievement-card {
+        padding: 24px;
+    }
+
+    .experience-overview-grid,
+    .experience-type-grid,
+    .experience-achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .responsibility-item {
+        flex-direction: column;
+    }
+}
+
+/* =====================================================
+   PROJECTS PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+    .featured-project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-page-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-project-image {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .project-filter-section,
+    .featured-project-section,
+    .projects-main-section {
+        padding: 55px 0;
+    }
+
+    .project-filter-box {
+        padding: 18px;
+    }
+
+    .project-filter-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .project-filter-btn {
+        width: 100%;
+    }
+
+    .featured-project-card {
+        padding: 16px;
+    }
+
+    .featured-project-image {
+        min-height: 260px;
+    }
+
+    .featured-result-grid,
+    .projects-page-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-page-image {
+        height: 210px;
+    }
+}
+
+/* =====================================================
+   PROJECT DETAILS PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+
+    .project-details-grid,
+    .problem-strategy-grid,
+    .tools-results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-details-image {
+        min-height: 380px;
+    }
+
+    .execution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-next-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-next-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .project-details-section,
+    .problem-strategy-section,
+    .tools-results-section,
+    .execution-section,
+    .project-review-section,
+    .project-next-section {
+        padding: 65px 0;
+    }
+
+    .project-details-image {
+        min-height: 260px;
+    }
+
+    .project-details-info,
+    .case-study-card,
+    .project-tools-card,
+    .project-results-card,
+    .execution-card,
+    .project-review-box,
+    .project-next-box {
+        padding: 24px;
+    }
+
+    .project-meta-grid,
+    .result-list,
+    .execution-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-next-actions,
+    .project-next-actions .btn {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   REVIEWS PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+    .review-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reviews-page-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .submit-review-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .review-summary-section,
+    .reviews-main-section,
+    .submit-review-section {
+        padding: 65px 0;
+    }
+
+    .review-summary-grid,
+    .reviews-page-grid,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .submit-review-content,
+    .submit-review-form,
+    .review-page-card,
+    .review-summary-card {
+        padding: 24px;
+    }
+
+    .star-rating-input {
+        justify-content: space-between;
+    }
+
+    .star-rating-input button {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* =====================================================
+   CONTACT PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 1080px) {
+
+    .contact-info-grid,
+    .contact-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+
+    .contact-info-section,
+    .contact-main-section,
+    .contact-process-section,
+    .contact-faq-section {
+        padding: 65px 0;
+    }
+
+    .contact-info-grid,
+    .contact-process-grid,
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-left-content,
+    .contact-form-card,
+    .contact-info-card,
+    .contact-process-card,
+    .faq-card {
+        padding: 24px;
+    }
+
+    .contact-social-links {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .contact-social-links a {
+        text-align: center;
+    }
+}

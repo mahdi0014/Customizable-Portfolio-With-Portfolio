@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard | Admin Panel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="../assets/css/admin.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+
+      <section class="admin-content">
+        <div class="admin-welcome-card">
+          <div>
+            <span class="admin-badge">Admin Dashboard</span>
+            <h1>Welcome to Portfolio Control Panel</h1>
+            <p>
+              Manage digital marketer profile, services, projects, reviews,
+              messages, and website settings from one place.
+            </p>
+          </div>
+
+          <a
+            href="../index.html"
+            target="_blank"
+            class="admin-btn admin-btn-primary"
+          >
+            <i class="fa-solid fa-arrow-up-right-from-square"></i><span>View Website</span>
+          </a>
+        </div>
+
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <div>
+              <strong id="dashboardTotalProjects">0</strong>
+              <span>Total Projects</span>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+            <div>
+              <strong id="dashboardTotalReviews">0</strong>
+              <span>Total Reviews</span>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+            <div>
+              <strong id="dashboardPendingReviews">0</strong>
+              <span>Pending Reviews</span>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <strong id="dashboardNewMessages">0</strong>
+              <span>Unread Messages</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-dashboard-grid">
+          <div class="admin-panel-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Recent Projects</h3>
+                <p>Latest project entries from Google Sheet</p>
+              </div>
+
+              <a href="../admin/projects.html">View All</a>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Project</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+
+                <tbody id="dashboardRecentProjects">
+                  <tr>
+                    <td colspan="4">Loading projects...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="admin-panel-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Recent Messages</h3>
+                <p>Latest contact requests</p>
+              </div>
+
+              <a href="../admin/messages.html">View All</a>
+            </div>
+
+            <div class="message-list" id="dashboardRecentMessages">
+              <div class="message-item">
+                <div class="message-avatar">...</div>
+                <div>
+                  <h4>Loading...</h4>
+                  <p>Please wait...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-panel-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Quick Actions</h3>
+              <p>Common admin tasks</p>
+            </div>
+          </div>
+
+          <div class="quick-action-grid">
+            <a href="../admin/profile.html" class="quick-action-card">
+              <span><i class="fa-solid fa-user"></i></span>
+              <strong>Update Profile</strong>
+            </a>
+
+            <a href="../admin/projects.html" class="quick-action-card">
+              <span><i class="fa-solid fa-rocket"></i></span>
+              <strong>Add Project</strong>
+            </a>
+
+
+            <a href="../admin/skills.html" class="quick-action-card">
+              <span><i class="fa-solid fa-chart-simple"></i></span>
+              <strong>Manage Skills</strong>
+            </a>
+
+            <a href="../admin/reviews.html" class="quick-action-card">
+              <span><i class="fa-solid fa-star"></i></span>
+              <strong>Approve Reviews</strong>
+            </a>
+
+            <a href="../admin/messages.html" class="quick-action-card">
+              <span><i class="fa-solid fa-envelope"></i></span>
+              <strong>Check Messages</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="admin-overlay" id="adminOverlay"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

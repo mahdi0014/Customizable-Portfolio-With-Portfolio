@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills | Admin Panel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+
+      <section class="admin-content">
+        <div class="admin-page-heading">
+          <div>
+            <span class="admin-badge">Skill Management</span>
+            <h1>Manage Marketing Expertise Skills</h1>
+            <p>
+              Add, edit, publish, and reorder skill progress bars that appear on
+              the home page.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-management-grid">
+          <form class="admin-panel-card admin-crud-form" id="skillForm">
+            <div class="admin-card-header">
+              <div>
+                <h3 id="skillFormTitle">Add Skill</h3>
+                <p>Fill the form to add a new marketing skill.</p>
+              </div>
+            </div>
+
+            <input type="hidden" id="skillId" />
+
+            <div class="admin-skill-preview-card">
+              <div class="admin-skill-preview-head">
+                <strong id="skillPreviewName">Skill Name</strong>
+                <span id="skillPreviewPercent">90%</span>
+              </div>
+              <div class="admin-skill-preview-bar">
+                <span id="skillPreviewBar"></span>
+              </div>
+            </div>
+
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label>Skill Name</label>
+                <input
+                  type="text"
+                  id="skillName"
+                  placeholder="Facebook Ads"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Percentage</label>
+                <input
+                  type="number"
+                  id="skillPercentage"
+                  min="0"
+                  max="100"
+                  placeholder="90"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Display Order</label>
+                <input
+                  type="number"
+                  id="skillOrder"
+                  placeholder="1"
+                  value="1"
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Status</label>
+                <select id="skillStatus" required>
+                  <option value="Published">Published</option>
+                  <option value="Draft">Draft</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="admin-form-actions">
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="cancelSkillEditBtn"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="admin-btn admin-btn-primary">
+                Save Skill
+              </button>
+            </div>
+          </form>
+
+          <div class="admin-panel-card admin-list-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Skill List</h3>
+                <p>Manage all home page skills from here.</p>
+              </div>
+
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="clearSkillBtn"
+              >
+                Clear All
+              </button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-crud-table">
+                <thead>
+                  <tr>
+                    <th>Skill</th>
+                    <th>Percentage</th>
+                    <th>Order</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="skillTableBody"></tbody>
+              </table>
+            </div>
+
+            <div class="admin-empty-state" id="skillEmptyState">
+              <h3>No Skill Added</h3>
+              <p>Add skill information using the form.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="admin-overlay" id="adminOverlay"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

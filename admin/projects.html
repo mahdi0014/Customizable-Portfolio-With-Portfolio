@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Projects | Admin Panel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="../assets/css/admin.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+
+      <section class="admin-content">
+        <div class="admin-page-heading">
+          <div>
+            <span class="admin-badge">Project Management</span>
+            <h1>Manage Marketing Projects</h1>
+            <p>
+              Add, edit, delete, publish, and feature digital marketing
+              projects, campaign results, case studies, and client work.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-management-grid project-management-grid">
+          <!-- PROJECT FORM -->
+          <form class="admin-panel-card admin-crud-form" id="projectForm">
+            <div class="admin-card-header">
+              <div>
+                <h3 id="projectFormTitle">Add Project</h3>
+                <p>Fill the form to add a marketing project or case study.</p>
+              </div>
+            </div>
+
+            <input type="hidden" id="projectId" />
+
+            <div class="project-image-preview-box">
+              <img
+                id="projectImagePreview"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop"
+                alt="Project Preview"
+              />
+            </div>
+
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label>Project Title</label>
+                <input
+                  type="text"
+                  id="projectTitle"
+                  placeholder="Lead Generation Campaign"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Project Category</label>
+                <select id="projectCategory" required>
+                  <option value="">Select Category</option>
+                  <option>Facebook Ads</option>
+                  <option>Google Ads</option>
+                  <option>SEO</option>
+                  <option>Lead Generation</option>
+                  <option>Social Media</option>
+                  <option>Content Marketing</option>
+                  <option>Email Marketing</option>
+                  <option>Analytics</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label>Client Name</label>
+                <input
+                  type="text"
+                  id="projectClient"
+                  placeholder="Service Business"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Project Date / Duration</label>
+                <input
+                  type="text"
+                  id="projectDate"
+                  placeholder="30 Days / Jan 2026"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Project Image URL</label>
+                <input
+                  type="url"
+                  id="projectImage"
+                  placeholder="https://example.com/project-image.jpg"
+                />
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Project URL</label>
+                <input
+                  type="url"
+                  id="projectUrl"
+                  placeholder="https://example.com"
+                />
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Short Description</label>
+                <textarea
+                  id="projectShortDescription"
+                  placeholder="Write short project summary..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Full Description / Overview</label>
+                <textarea
+                  id="projectFullDescription"
+                  placeholder="Write full project overview..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Client Problem</label>
+                <textarea
+                  id="projectProblem"
+                  placeholder="Write the client problem or challenge..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Strategy Used</label>
+                <textarea
+                  id="projectStrategy"
+                  placeholder="Audience research, ad copy, campaign setup, optimization..."
+                  required
+                ></textarea>
+                <small class="admin-help-text"
+                  >Write strategy points separated by comma.</small
+                >
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Tools Used</label>
+                <input
+                  type="text"
+                  id="projectTools"
+                  placeholder="Facebook Ads Manager, Meta Business Suite, Canva"
+                />
+                <small class="admin-help-text"
+                  >Write tools separated by comma.</small
+                >
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Project Results</label>
+                <textarea
+                  id="projectResults"
+                  placeholder="500+ Leads Generated, 35% Lower Cost Per Lead, 220% Reach Increased"
+                  required
+                ></textarea>
+                <small class="admin-help-text"
+                  >Write results separated by comma.</small
+                >
+              </div>
+
+              <div class="admin-form-group">
+                <label>Main Result</label>
+                <input
+                  type="text"
+                  id="projectMainResult"
+                  placeholder="500+ Leads"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Status</label>
+                <select id="projectStatus" required>
+                  <option value="Published">Published</option>
+                  <option value="Draft">Draft</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label class="admin-checkbox-label">
+                  <input type="checkbox" id="projectFeatured" />
+                  <span>Mark as Featured Project</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="admin-form-actions">
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="cancelProjectEditBtn"
+              >
+                Cancel
+              </button>
+
+              <button type="submit" class="admin-btn admin-btn-primary">
+                Save Project
+              </button>
+            </div>
+          </form>
+
+          <!-- PROJECT LIST -->
+          <div class="admin-panel-card admin-list-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Project List</h3>
+                <p>Manage all project records from here.</p>
+              </div>
+
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="clearProjectBtn"
+              >
+                Clear All
+              </button>
+            </div>
+
+            <div class="admin-project-filter-row">
+              <input
+                type="text"
+                id="adminProjectSearch"
+                placeholder="Search project..."
+              />
+
+              <select id="adminProjectStatusFilter">
+                <option value="all">All Status</option>
+                <option value="Published">Published</option>
+                <option value="Draft">Draft</option>
+              </select>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-crud-table">
+                <thead>
+                  <tr>
+                    <th>Project</th>
+                    <th>Category</th>
+                    <th>Client</th>
+                    <th>Result</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody id="projectTableBody">
+                  <!-- JS data will appear here -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="admin-empty-state" id="projectEmptyState">
+              <h3>No Project Found</h3>
+              <p>
+                Add project information using the form or change your filter.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="admin-overlay" id="adminOverlay"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

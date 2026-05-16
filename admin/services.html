@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Services | Admin Panel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="../assets/css/admin.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+
+      <section class="admin-content">
+        <div class="admin-page-heading">
+          <div>
+            <span class="admin-badge">Service Management</span>
+            <h1>Manage Digital Marketing Services</h1>
+            <p>
+              Add, edit, delete, and publish digital marketing services such as
+              Facebook Ads, Google Ads, SEO, lead generation, content strategy,
+              and analytics.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-management-grid">
+          <!-- SERVICE FORM -->
+          <form class="admin-panel-card admin-crud-form" id="serviceForm">
+            <div class="admin-card-header">
+              <div>
+                <h3 id="serviceFormTitle">Add Service</h3>
+                <p>Fill the form to add a new service.</p>
+              </div>
+            </div>
+
+            <input type="hidden" id="serviceId" />
+
+            <div class="service-icon-preview-box">
+              <div class="service-admin-icon-preview" id="serviceIconPreview">
+                FB
+              </div>
+              <div>
+                <h4>Icon Preview</h4>
+                <p>Use short text like FB, G, SEO, LG, SM, CS.</p>
+              </div>
+            </div>
+
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label>Service Name</label>
+                <input
+                  type="text"
+                  id="serviceName"
+                  placeholder="Facebook Ads Campaign"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Icon / Short Code</label>
+                <input
+                  type="text"
+                  id="serviceIcon"
+                  placeholder="FB"
+                  maxlength="5"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Service Category</label>
+                <select id="serviceCategory" required>
+                  <option value="">Select Category</option>
+                  <option>Paid Advertising</option>
+                  <option>SEO</option>
+                  <option>Social Media</option>
+                  <option>Lead Generation</option>
+                  <option>Content Marketing</option>
+                  <option>Email Marketing</option>
+                  <option>Analytics</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label>Status</label>
+                <select id="serviceStatus" required>
+                  <option value="Published">Published</option>
+                  <option value="Draft">Draft</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Short Description</label>
+                <textarea
+                  id="serviceDescription"
+                  placeholder="Write short service description..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Service Features</label>
+                <textarea
+                  id="serviceFeatures"
+                  placeholder="Example: Audience targeting, Ad creative planning, Campaign optimization"
+                  required
+                ></textarea>
+                <small class="admin-help-text"
+                  >Write features separated by comma.</small
+                >
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Tools Used</label>
+                <input
+                  type="text"
+                  id="serviceTools"
+                  placeholder="Facebook Ads Manager, Meta Business Suite, Canva"
+                />
+                <small class="admin-help-text"
+                  >Write tools separated by comma.</small
+                >
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Display Order</label>
+                <input
+                  type="number"
+                  id="serviceOrder"
+                  placeholder="1"
+                  value="1"
+                />
+              </div>
+            </div>
+
+            <div class="admin-form-actions">
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="cancelServiceEditBtn"
+              >
+                Cancel
+              </button>
+
+              <button type="submit" class="admin-btn admin-btn-primary">
+                Save Service
+              </button>
+            </div>
+          </form>
+
+          <!-- SERVICE LIST -->
+          <div class="admin-panel-card admin-list-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Service List</h3>
+                <p>Manage all service records from here.</p>
+              </div>
+
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="clearServiceBtn"
+              >
+                Clear All
+              </button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-crud-table">
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Category</th>
+                    <th>Tools</th>
+                    <th>Order</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody id="serviceTableBody">
+                  <!-- JS data will appear here -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="admin-empty-state" id="serviceEmptyState">
+              <h3>No Service Added</h3>
+              <p>Add service information using the form.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="admin-overlay" id="adminOverlay"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

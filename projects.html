@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Digital Marketer Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/responsive.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="public-data-loading database-only-public">
+<div data-include="components/navbar.html"></div>
+<main>
+<!-- ================= INNER HERO ================= -->
+<section class="inner-hero projects-hero">
+<div class="container">
+<div class="inner-hero-content reveal">
+<span class="section-badge">Projects</span>
+<h1>Marketing Projects &amp; Case Studies</h1>
+<p>
+              Explore digital marketing projects, campaign strategies, tools
+              used, and measurable results from paid ads, SEO, lead generation,
+              and social media marketing.
+            </p>
+</div>
+</div>
+</section>
+<!-- ================= PROJECT FILTER SECTION ================= -->
+<section class="project-filter-section">
+<div class="container">
+<div class="project-filter-box reveal">
+<div class="project-search">
+<input id="projectSearch" placeholder="Search project by title, client, or category..." type="text"/>
+</div>
+<div class="project-filter-buttons">
+<button class="project-filter-btn active" data-filter="all">
+                All
+              </button>
+<button class="project-filter-btn" data-filter="facebook-ads">
+                Facebook Ads
+              </button>
+<button class="project-filter-btn" data-filter="google-ads">
+                Google Ads
+              </button>
+<button class="project-filter-btn" data-filter="seo">SEO</button>
+<button class="project-filter-btn" data-filter="lead-generation">
+                Lead Generation
+              </button>
+<button class="project-filter-btn" data-filter="social-media">
+                Social Media
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= FEATURED PROJECT ================= -->
+<section class="featured-project-section">
+<div class="container">
+<div class="section-heading reveal">
+<span class="section-badge">Featured Case Study</span>
+<h2>Highlighted Marketing Success</h2>
+<p>
+              A selected project showing strategy, execution, and campaign
+              result.
+            </p>
+</div>
+<div class="featured-project-card reveal"><div class="public-inline-loader"><span></span><p>Loading featured project from admin database...</p></div></div>
+</div>
+</section>
+<!-- ================= PROJECT GRID ================= -->
+<section class="projects-main-section">
+<div class="container">
+<div class="section-heading reveal">
+<span class="section-badge">All Projects</span>
+<h2>Digital Marketing Project Showcase</h2>
+<p>
+              Browse different types of marketing projects and campaign results.
+            </p>
+</div>
+<div class="projects-page-grid" id="projectsGrid"><div class="public-inline-loader"><span></span><p>Loading projects from admin database...</p></div></div>
+<div class="project-empty-message" id="projectEmptyMessage">
+<h3>No Project Found</h3>
+<p>Try another keyword or category filter.</p>
+</div>
+</div>
+</section>
+<!-- ================= CTA ================= -->
+<section class="cta-section">
+<div class="container">
+<div class="cta-box reveal">
+<span class="section-badge">Start Your Project</span>
+<h2>Want Similar Marketing Results?</h2>
+<p>
+              Let’s discuss your business goal and create a campaign strategy
+              that can bring measurable growth.
+            </p>
+<a class="btn btn-primary" href="contact.html">Get In Touch</a>
+</div>
+</div>
+</section>
+</main>
+<div data-include="components/footer.html"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/initial-data.js"></script>
+<script src="assets/js/image-url-utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/api.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/public-data.js"></script>
+  </body>
+</html>

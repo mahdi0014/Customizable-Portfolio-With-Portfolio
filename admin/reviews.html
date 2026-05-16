@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Reviews | Admin Panel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="../assets/css/admin.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+
+      <section class="admin-content">
+        <div class="admin-page-heading">
+          <div>
+            <span class="admin-badge">Review Management</span>
+            <h1>Manage Client Reviews</h1>
+            <p>
+              Approve, reject, feature, edit, and delete client reviews. Only
+              approved reviews should appear on the public website.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-management-grid">
+          <!-- REVIEW FORM -->
+          <form class="admin-panel-card admin-crud-form" id="reviewAdminForm">
+            <div class="admin-card-header">
+              <div>
+                <h3 id="reviewFormTitle">Add Review</h3>
+                <p>Add client review manually or edit submitted reviews.</p>
+              </div>
+            </div>
+
+            <input type="hidden" id="reviewId" />
+
+            <div class="admin-review-preview-box">
+              <div class="admin-rating-stars" id="reviewStarPreview">★★★★★</div>
+              <p id="reviewMessagePreview">
+                Client review preview will appear here.
+              </p>
+
+              <div class="admin-review-client-preview">
+                <div class="message-avatar" id="reviewInitialPreview">C</div>
+                <div>
+                  <h4 id="reviewClientPreview">Client Name</h4>
+                  <span id="reviewCompanyPreview">Company / Profession</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label>Client Name</label>
+                <input
+                  type="text"
+                  id="reviewClientName"
+                  placeholder="Rahim Ahmed"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Company / Profession</label>
+                <input
+                  type="text"
+                  id="reviewCompany"
+                  placeholder="Business Owner"
+                  required
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Project Name</label>
+                <input
+                  type="text"
+                  id="reviewProjectName"
+                  placeholder="Lead Generation Campaign"
+                />
+              </div>
+
+              <div class="admin-form-group">
+                <label>Rating</label>
+                <select id="reviewRating" required>
+                  <option value="5">5 Stars</option>
+                  <option value="4">4 Stars</option>
+                  <option value="3">3 Stars</option>
+                  <option value="2">2 Stars</option>
+                  <option value="1">1 Star</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label>Status</label>
+                <select id="reviewStatus" required>
+                  <option value="Pending">Pending</option>
+                  <option value="Approved">Approved</option>
+                  <option value="Rejected">Rejected</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label>Client Image URL</label>
+                <input
+                  type="url"
+                  id="reviewImageUrl"
+                  placeholder="https://example.com/client.jpg"
+                />
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Review Message</label>
+                <textarea
+                  id="reviewMessage"
+                  placeholder="Write client review..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label class="admin-checkbox-label">
+                  <input type="checkbox" id="reviewFeatured" />
+                  <span>Mark as Featured Review</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="admin-form-actions">
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="cancelReviewEditBtn"
+              >
+                Cancel
+              </button>
+
+              <button type="submit" class="admin-btn admin-btn-primary">
+                Save Review
+              </button>
+            </div>
+          </form>
+
+          <!-- REVIEW LIST -->
+          <div class="admin-panel-card admin-list-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Review List</h3>
+                <p>Manage pending, approved, and rejected reviews.</p>
+              </div>
+
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="clearReviewBtn"
+              >
+                Clear All
+              </button>
+            </div>
+
+            <div class="admin-review-filter-row">
+              <input
+                type="text"
+                id="adminReviewSearch"
+                placeholder="Search review..."
+              />
+
+              <select id="adminReviewStatusFilter">
+                <option value="all">All Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-crud-table">
+                <thead>
+                  <tr>
+                    <th>Client</th>
+                    <th>Rating</th>
+                    <th>Project</th>
+                    <th>Status</th>
+                    <th>Featured</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <tbody id="reviewTableBody">
+                  <!-- JS data will appear here -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="admin-empty-state" id="reviewEmptyState">
+              <h3>No Review Found</h3>
+              <p>Add a review or change your filter/search keyword.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="admin-overlay" id="adminOverlay"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>

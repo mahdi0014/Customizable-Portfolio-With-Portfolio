@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Messages | Admin Panel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="stylesheet" href="../assets/css/admin.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+
+      <section class="admin-content">
+        <div class="admin-page-heading">
+          <div>
+            <span class="admin-badge">Message Management</span>
+            <h1>Manage Contact Messages</h1>
+            <p>
+              View contact form submissions, check client messages, filter by
+              service, mark messages as read or unread, and delete old messages.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-panel-card admin-list-card">
+          <div class="admin-card-header">
+            <div>
+              <h3>Contact Message List</h3>
+              <p>All website contact messages will appear here.</p>
+            </div>
+
+            <div class="admin-header-actions">
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="markAllMessagesReadBtn"
+              >
+                Mark All Read
+              </button>
+
+              <button
+                type="button"
+                class="admin-btn admin-btn-outline"
+                id="clearMessagesBtn"
+              >
+                Clear All
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-message-filter-row">
+            <input
+              type="text"
+              id="adminMessageSearch"
+              placeholder="Search by name, email, subject, or message..."
+            />
+
+            <select id="adminMessageServiceFilter">
+              <option value="all">All Services</option>
+              <option>Facebook Ads</option>
+              <option>Google Ads</option>
+              <option>SEO Optimization</option>
+              <option>Lead Generation</option>
+              <option>Social Media Marketing</option>
+              <option>Content Strategy</option>
+              <option>Email Marketing</option>
+              <option>Analytics & Reporting</option>
+              <option>Other</option>
+            </select>
+
+            <select id="adminMessageStatusFilter">
+              <option value="all">All Status</option>
+              <option value="Unread">Unread</option>
+              <option value="Read">Read</option>
+            </select>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table admin-crud-table">
+              <thead>
+                <tr>
+                  <th>Sender</th>
+                  <th>Contact</th>
+                  <th>Service</th>
+                  <th>Subject</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="messageTableBody">
+                <!-- JS data will appear here -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="admin-empty-state" id="messageEmptyState">
+            <h3>No Message Found</h3>
+            <p>No contact message found. Try changing search or filter.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MESSAGE DETAILS MODAL -->
+    <div class="admin-message-modal" id="messageDetailsModal">
+      <div class="admin-message-modal-card">
+        <div class="admin-message-modal-header">
+          <div>
+            <span class="admin-badge">Message Details</span>
+            <h2 id="modalMessageSubject">Message Subject</h2>
+          </div>
+
+          <button
+            type="button"
+            class="admin-modal-close"
+            id="closeMessageModalBtn"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="admin-message-details-grid">
+          <div class="message-detail-item">
+            <span>Name</span>
+            <strong id="modalMessageName">Client Name</strong>
+          </div>
+
+          <div class="message-detail-item">
+            <span>Email</span>
+            <strong id="modalMessageEmail">example@email.com</strong>
+          </div>
+
+          <div class="message-detail-item">
+            <span>Phone</span>
+            <strong id="modalMessagePhone">+880 1XXXXXXXXX</strong>
+          </div>
+
+          <div class="message-detail-item">
+            <span>Service</span>
+            <strong id="modalMessageService">Facebook Ads</strong>
+          </div>
+
+          <div class="message-detail-item">
+            <span>Date</span>
+            <strong id="modalMessageDate">2026-05-15</strong>
+          </div>
+
+          <div class="message-detail-item">
+            <span>Status</span>
+            <strong id="modalMessageStatus">Unread</strong>
+          </div>
+        </div>
+
+        <div class="message-full-content">
+          <h3>Message</h3>
+          <p id="modalMessageText">Message details will appear here.</p>
+        </div>
+
+        <div class="message-modal-actions">
+          <a
+            href="#"
+            id="modalEmailReplyBtn"
+            class="admin-btn admin-btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Reply by Email
+          </a>
+
+          <a
+            href="#"
+            id="modalWhatsappReplyBtn"
+            class="admin-btn admin-btn-outline"
+            target="_blank"
+          >
+            Reply on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-overlay" id="adminOverlay"></div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js"></script>
+  </body>
+</html>
