@@ -342,17 +342,15 @@ const PortfolioAPI = {
 
         try {
             const client = await getPortfolioSupabaseClient();
-            const { data: inserted, error } = await client
+            const { error } = await client
                 .from('reviews')
-                .insert(payload)
-                .select('*')
-                .single();
+                .insert(payload);
 
             if (error) return supabaseErrorResult(error);
 
             return {
                 success: true,
-                data: inserted,
+                data: payload,
                 message: 'Review submitted successfully.'
             };
         } catch (error) {
@@ -371,17 +369,15 @@ const PortfolioAPI = {
 
         try {
             const client = await getPortfolioSupabaseClient();
-            const { data: inserted, error } = await client
+            const { error } = await client
                 .from('messages')
-                .insert(payload)
-                .select('*')
-                .single();
+                .insert(payload);
 
             if (error) return supabaseErrorResult(error);
 
             return {
                 success: true,
-                data: inserted,
+                data: payload,
                 message: 'Message submitted successfully.'
             };
         } catch (error) {
