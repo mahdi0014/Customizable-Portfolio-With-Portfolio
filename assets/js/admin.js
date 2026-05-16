@@ -462,7 +462,7 @@ function initAdminProfilePage() {
         resetButtonLoading(submitBtn, oldText);
 
         if (result.success) {
-            alert('Profile updated successfully in Google Sheet!');
+            alert('Profile updated successfully!');
 
             if (result.data && result.data.id) {
                 currentProfileId = result.data.id;
@@ -2392,7 +2392,7 @@ function initAdminSettingsPage() {
         resetButtonLoading(submitBtn, oldText);
 
         if (result.success) {
-            alert('Website settings updated successfully in Google Sheet!');
+            alert('Website settings updated successfully.');
 
             if (result.data && result.data.id) {
                 currentSettingsId = result.data.id;
@@ -2406,13 +2406,13 @@ function initAdminSettingsPage() {
 
     if (resetBtn) {
         resetBtn.addEventListener('click', async function () {
-            const confirmReload = confirm('Reload settings from Google Sheet? Unsaved changes will be lost.');
+            const confirmReload = confirm('Reload settings ? Unsaved changes will be lost.');
 
             if (!confirmReload) return;
 
             await loadSettingsFromAPI();
 
-            alert('Settings reloaded from Google Sheet.');
+            alert('Settings reloaded.');
         });
     }
 
@@ -2486,7 +2486,7 @@ function initAdminSettingsPage() {
         const websiteTitle = getAdminFieldValue(fields.websiteTitle) || 'Digital Marketer Portfolio';
         const logoText = getAdminFieldValue(fields.logoText) || 'DM';
         const tagline = getAdminFieldValue(fields.tagline) || 'Grow your brand with data-driven marketing.';
-        const footerText = getAdminFieldValue(fields.footerText) || '© 2026 Digital Marketer Portfolio. All Rights Reserved.';
+        const footerText = getAdminFieldValue(fields.footerText) || '© 2026 Digital Marketer Portfolio. All Rights Reserved. Designed by Mahdi.';
 
         const primaryColor = getAdminFieldValue(fields.primaryColorText) || '#7c3cff';
         const secondaryColor = getAdminFieldValue(fields.secondaryColorText) || '#00d4ff';
