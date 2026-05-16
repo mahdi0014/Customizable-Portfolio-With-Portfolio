@@ -1,131 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Reviews | Digital Marketer Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-<link href="assets/css/style.css" rel="stylesheet"/>
-<link href="assets/css/responsive.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-</head>
-<body class="public-data-loading database-only-public">
-<div data-include="components/navbar.html"></div>
-<main>
-<!-- ================= REVIEWS HERO ================= -->
-<section class="inner-hero reviews-hero">
-<div class="container">
-<div class="inner-hero-content reveal">
-<span class="section-badge">Client Reviews</span>
-<h1>What Clients Say</h1>
-<p>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Reviews | Digital Marketer Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="public-data-loading database-only-public">
+    <div data-include="components/navbar.html"></div>
+    <main>
+      <!-- ================= REVIEWS HERO ================= -->
+      <section class="inner-hero reviews-hero">
+        <div class="container">
+          <div class="inner-hero-content reveal">
+            <span class="section-badge">Client Reviews</span>
+            <h1>What Clients Say</h1>
+            <p>
               Real feedback from clients about digital marketing campaigns,
               communication, strategy, reporting, and project results.
             </p>
-</div>
-</div>
-</section>
-<!-- ================= RATING SUMMARY ================= -->
-<section class="review-summary-section">
-<div class="container">
-<div class="review-summary-grid">
-<div class="review-summary-card reveal">
-<strong>—</strong>
-<div class="rating">★★★★★</div>
-<span>Average Rating</span>
-</div>
-<div class="review-summary-card reveal">
-<strong>—</strong>
-<span>Happy Clients</span>
-</div>
-<div class="review-summary-card reveal">
-<strong>—</strong>
-<span>Projects Completed</span>
-</div>
-<div class="review-summary-card reveal">
-<strong>—</strong>
-<span>Client Satisfaction</span>
-</div>
-</div>
-</div>
-</section>
-<!-- ================= REVIEWS GRID ================= -->
-<section class="reviews-main-section">
-<div class="container">
-<div class="section-heading reveal">
-<span class="section-badge">Testimonials</span>
-<h2>Client Feedback &amp; Ratings</h2>
-<p>
+          </div>
+        </div>
+      </section>
+      <!-- ================= RATING SUMMARY ================= -->
+      <section class="review-summary-section">
+        <div class="container">
+          <div class="review-summary-grid">
+            <div class="review-summary-card reveal">
+              <strong>—</strong>
+              <div class="rating">★★★★★</div>
+              <span>Average Rating</span>
+            </div>
+            <div class="review-summary-card reveal">
+              <strong>—</strong>
+              <span>Happy Clients</span>
+            </div>
+            <div class="review-summary-card reveal">
+              <strong>—</strong>
+              <span>Projects Completed</span>
+            </div>
+            <div class="review-summary-card reveal">
+              <strong>—</strong>
+              <span>Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================= REVIEWS GRID ================= -->
+      <section class="reviews-main-section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-badge">Testimonials</span>
+            <h2>Client Feedback &amp; Ratings</h2>
+            <p>
               Feedback from clients who worked with me on marketing campaigns,
               lead generation, SEO, and social media growth.
             </p>
-</div>
-<div class="reviews-page-grid"><div class="public-inline-loader"><span></span><p>Loading approved reviews from admin database...</p></div></div>
-</div>
-</section>
-<!-- ================= SUBMIT REVIEW ================= -->
-<section class="submit-review-section">
-<div class="container submit-review-grid">
-<div class="submit-review-content reveal">
-<span class="section-badge">Give Review</span>
-<h2>Share Your Experience</h2>
-<p>
+          </div>
+          <div class="reviews-page-grid">
+            <div class="public-inline-loader">
+              <span></span>
+              <p>Loading approved reviews from admin database...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ================= SUBMIT REVIEW ================= -->
+      <section class="submit-review-section">
+        <div class="container submit-review-grid">
+          <div class="submit-review-content reveal">
+            <span class="section-badge">Give Review</span>
+            <h2>Share Your Experience</h2>
+            <p>
               Clients can submit reviews with ratings. After submission, the
               review will be stored as pending and will be visible after admin
               approval.
             </p>
-<div class="review-notice">
-<strong>Note:</strong>
+            <div class="review-notice">
+              <strong>Note:</strong>
               Your review will not appear immediately. Admin approval is
               required before publishing.
             </div>
-</div>
-<form class="submit-review-form reveal" id="reviewForm">
-<div class="form-row">
-<input id="reviewName" placeholder="Your Name" required="" type="text"/>
-<input id="reviewCompany" placeholder="Company / Profession" required="" type="text"/>
-</div>
-<input id="reviewProject" placeholder="Project Name" type="text"/>
-<div class="rating-input-box">
-<label>Your Rating</label>
-<div class="star-rating-input" id="starRatingInput">
-<button data-rating="1" type="button">★</button>
-<button data-rating="2" type="button">★</button>
-<button data-rating="3" type="button">★</button>
-<button data-rating="4" type="button">★</button>
-<button data-rating="5" type="button">★</button>
-</div>
-<input id="reviewRating" type="hidden" value="5"/>
-</div>
-<textarea id="reviewMessage" placeholder="Write your review..." required=""></textarea>
-<button class="btn btn-primary" type="submit">Submit Review</button>
-</form>
-</div>
-</section>
-<!-- ================= CTA ================= -->
-<section class="cta-section">
-<div class="container">
-<div class="cta-box reveal">
-<span class="section-badge">Let’s Work Together</span>
-<h2>Want to Become My Next Happy Client?</h2>
-<p>
+          </div>
+          <form class="submit-review-form reveal" id="reviewForm">
+            <div class="form-row">
+              <input
+                id="reviewName"
+                placeholder="Your Name"
+                required=""
+                type="text"
+              />
+              <input
+                id="reviewCompany"
+                placeholder="Company / Profession"
+                required=""
+                type="text"
+              />
+            </div>
+            <input id="reviewProject" placeholder="Project Name" type="text" />
+            <div class="rating-input-box">
+              <label>Your Rating</label>
+              <div class="star-rating-input" id="starRatingInput">
+                <button data-rating="1" type="button">★</button>
+                <button data-rating="2" type="button">★</button>
+                <button data-rating="3" type="button">★</button>
+                <button data-rating="4" type="button">★</button>
+                <button data-rating="5" type="button">★</button>
+              </div>
+              <input id="reviewRating" type="hidden" value="5" />
+            </div>
+            <textarea
+              id="reviewMessage"
+              placeholder="Write your review..."
+              required=""
+            ></textarea>
+            <button class="btn btn-primary" type="submit">Submit Review</button>
+          </form>
+        </div>
+      </section>
+      <!-- ================= CTA ================= -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-box reveal">
+            <span class="section-badge">Let’s Work Together</span>
+            <h2>Want to Become My Next Happy Client?</h2>
+            <p>
               Share your business goal and let’s create a digital marketing
               strategy that brings measurable growth.
             </p>
-<a class="btn btn-primary" href="contact.html">Start a Project</a>
-</div>
-</div>
-</section>
-</main>
-<div data-include="components/footer.html"></div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-<script src="assets/js/config.js"></script>
-<script src="assets/js/initial-data.js"></script>
-<script src="assets/js/image-url-utils.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="assets/js/api.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/public-data.js"></script>
+            <a class="btn btn-primary" href="contact.html">Start a Project</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/initial-data.js"></script>
+    <script src="assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/api.js?v=1.0.2"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/public-data.js"></script>
   </body>
 </html>
